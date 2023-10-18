@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// 第二畫面的歌手清單模板
 struct SongRow: View {
     let song: Song
     

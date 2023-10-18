@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// 第一個畫面的下方專輯推薦區之模板
 struct AlbumView: View {
     let album: String
     

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// 存放所有歌手的專輯
 struct Album {
     var singer: String
     
@@ -17,7 +17,7 @@ struct Album {
     let albumMP = ["不按牌理出牌", "射手", "戰神"]
     let nothing : Array<String> = []
     
-    
+//  當該fucntion被呼叫時，根據傳入的singer，回傳該歌手的專輯
     func album() -> Array<String> {
         switch singer {
         case "周杰倫":

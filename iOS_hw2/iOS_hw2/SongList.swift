@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// 第二畫面的所有歌手介紹
 struct SongList: View {
     let songs = [
         Song(singer: "周杰倫"),

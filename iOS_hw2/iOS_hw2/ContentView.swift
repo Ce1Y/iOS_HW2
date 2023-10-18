@@ -14,44 +14,47 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
+//          分成兩頁，第一頁為推薦專輯，第二頁為所有歌手的介紹
             TabView {
                 VStack(alignment: .leading) {
-                    Group {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(singers, id: \.self) { singer in
-                                    VStack {
-                                        Image(singer)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width:75, height: 75)
-                                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                                            .padding(5)
-                                            .onTapGesture {
-                                                singerNow = singer
-                                                albumList = Album.album(Album(singer: singerNow))()
-                                            }
-                                        Text(singer)
-                                            .font(.system(size: 12))
-                                    }
+//                  此處的ScrollView為畫面上方一排的歌手頭像
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(singers, id: \.self) { singer in
+                                VStack {
+                                    Image(singer)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width:75, height: 75)
+                                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                                        .padding(5)
+                                        .onTapGesture {
+                                            singerNow = singer
+                                            albumList = Album.album(Album(singer: singerNow))()
+                                        }
+                                    Text(singer)
+                                        .font(.system(size: 12))
                                 }
-                            }.padding()
-                        }
-                        Rectangle()
-                            .frame(height: 1)
-                        Text("為您推薦 : \(singerNow)")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                            .padding()
-                        let columns = [GridItem(spacing: 5), GridItem()]
-                        ScrollView {
-                            LazyVGrid(columns: columns, spacing: 25) {
-                                ForEach(albumList.indices, id: \.self) { item in
-                                    NavigationLink {
-                                        SingerDetail()
-                                    } label: {
+                            }
+                        }.padding()
+                    }
+//                  用以分割上方的歌手列表與下方的推薦區域
+                    Rectangle()
+                        .frame(height: 1)
+                    Text("為您推薦 : \(singerNow)")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .padding()
+//                  此處的ScrollView為畫面下方的推薦專輯區域
+                    let columns = [GridItem(spacing: 5), GridItem()]
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 25) {
+                            ForEach(albumList.indices, id: \.self) { item in
+                                NavigationLink(
+                                    destination: SingerDetail(singer: $singerNow,
+                                                              album: $albumList[item]),
+                                    label: {
                                         AlbumView(album: albumList[item])
-                                    }
-                                }
+                                    })
                             }
                         }
                     }
