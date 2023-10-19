@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var singerNow: String = ""
     @State var albumList: Array<String> = []
+    @State var albumDescription: Array<String> = []
     let singers = ["周杰倫", "五月天", "林俊傑", "張惠妹", "MP魔幻力量"]
     
     var body: some View {
@@ -31,6 +32,8 @@ struct ContentView: View {
                                         .onTapGesture {
                                             singerNow = singer
                                             albumList = Album.album(Album(singer: singerNow))()
+                                            albumDescription =
+                                                AlbumDescription.description(AlbumDescription(singer: singerNow))()
                                         }
                                     Text(singer)
                                         .font(.system(size: 12))
@@ -50,10 +53,12 @@ struct ContentView: View {
                         LazyVGrid(columns: columns, spacing: 25) {
                             ForEach(albumList.indices, id: \.self) { item in
                                 NavigationLink(
-                                    destination: SingerDetail(singer: $singerNow,
-                                                              album: $albumList[item]),
+                                    destination: AlbumDetailView(singer: $singerNow,
+                                                              album: $albumList[item],
+                                                              description: $albumDescription[item]),
                                     label: {
-                                        AlbumView(album: albumList[item])
+                                        AlbumView(album: albumList[item]
+                                        )
                                     })
                             }
                         }

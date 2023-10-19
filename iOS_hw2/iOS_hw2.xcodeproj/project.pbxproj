@@ -16,7 +16,10 @@
 		59D183B52ADFB30300039E47 /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D183B42ADFB30300039E47 /* SongList.swift */; };
 		59D183B72ADFBF9300039E47 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D183B62ADFBF9300039E47 /* AlbumView.swift */; };
 		59D183B92ADFD14200039E47 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D183B82ADFD14200039E47 /* Album.swift */; };
-		59D183BB2ADFE1C400039E47 /* SingerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D183BA2ADFE1C400039E47 /* SingerDetail.swift */; };
+		59D183BB2ADFE1C400039E47 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D183BA2ADFE1C400039E47 /* AlbumDetailView.swift */; };
+		59D790922AE0E4B300FE8138 /* AlbumDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D790912AE0E4B300FE8138 /* AlbumDescription.swift */; };
+		59D790942AE0EDDA00FE8138 /* SingerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D790932AE0EDDA00FE8138 /* SingerDetailView.swift */; };
+		59D790962AE0EFA000FE8138 /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D790952AE0EFA000FE8138 /* Singer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +33,10 @@
 		59D183B42ADFB30300039E47 /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		59D183B62ADFBF9300039E47 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		59D183B82ADFD14200039E47 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		59D183BA2ADFE1C400039E47 /* SingerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetail.swift; sourceTree = "<group>"; };
+		59D183BA2ADFE1C400039E47 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
+		59D790912AE0E4B300FE8138 /* AlbumDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDescription.swift; sourceTree = "<group>"; };
+		59D790932AE0EDDA00FE8138 /* SingerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetailView.swift; sourceTree = "<group>"; };
+		59D790952AE0EFA000FE8138 /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +71,14 @@
 			children = (
 				59D183A22ADF9E5000039E47 /* iOS_hw2App.swift */,
 				59D183A42ADF9E5000039E47 /* ContentView.swift */,
-				59D183BA2ADFE1C400039E47 /* SingerDetail.swift */,
+				59D183BA2ADFE1C400039E47 /* AlbumDetailView.swift */,
+				59D790932AE0EDDA00FE8138 /* SingerDetailView.swift */,
 				59D183B02ADFAFA200039E47 /* Song.swift */,
 				59D183B22ADFB14000039E47 /* SongRow.swift */,
 				59D183B42ADFB30300039E47 /* SongList.swift */,
+				59D790952AE0EFA000FE8138 /* Singer.swift */,
 				59D183B82ADFD14200039E47 /* Album.swift */,
+				59D790912AE0E4B300FE8138 /* AlbumDescription.swift */,
 				59D183B62ADFBF9300039E47 /* AlbumView.swift */,
 				59D183A62ADF9E5200039E47 /* Assets.xcassets */,
 				59D183A82ADF9E5200039E47 /* Preview Content */,
@@ -155,13 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59D183BB2ADFE1C400039E47 /* SingerDetail.swift in Sources */,
+				59D183BB2ADFE1C400039E47 /* AlbumDetailView.swift in Sources */,
 				59D183B72ADFBF9300039E47 /* AlbumView.swift in Sources */,
 				59D183B52ADFB30300039E47 /* SongList.swift in Sources */,
 				59D183B12ADFAFA200039E47 /* Song.swift in Sources */,
 				59D183A52ADF9E5000039E47 /* ContentView.swift in Sources */,
+				59D790962AE0EFA000FE8138 /* Singer.swift in Sources */,
 				59D183A32ADF9E5000039E47 /* iOS_hw2App.swift in Sources */,
 				59D183B92ADFD14200039E47 /* Album.swift in Sources */,
+				59D790922AE0E4B300FE8138 /* AlbumDescription.swift in Sources */,
+				59D790942AE0EDDA00FE8138 /* SingerDetailView.swift in Sources */,
 				59D183B32ADFB14000039E47 /* SongRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

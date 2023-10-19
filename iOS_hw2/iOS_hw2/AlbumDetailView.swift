@@ -7,9 +7,10 @@
 
 import SwiftUI
 //此畫面為專輯的介紹
-struct SingerDetail: View {
+struct AlbumDetailView: View {
     @Binding var singer: String
     @Binding var album: String
+    @Binding var description: String
     
     var body: some View {
         VStack(alignment: .center) {
@@ -21,6 +22,9 @@ struct SingerDetail: View {
                 .navigationBarTitleDisplayMode(.inline)
             Text(album)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text(description)
+                .font(.system(size: 20))
+                .padding()
         }
     }
 }
