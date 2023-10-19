@@ -20,6 +20,7 @@ struct SongRow: View {
             VStack {
                 Text(song.singer)
                     .padding()
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }
         }
     }

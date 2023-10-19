@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var singerNow: String = ""
     @State var albumList: Array<String> = []
     @State var albumDescription: Array<String> = []
+    @State var title: String = "首頁"
     let singers = ["周杰倫", "五月天", "林俊傑", "張惠妹", "MP魔幻力量"]
     
     var body: some View {
@@ -66,12 +67,14 @@ struct ContentView: View {
                 }.tabItem {
                     Label("Home", systemImage: "house")
                 }
-                SongList()
+//              此為歌手清單的頁面
+                SongList(name: $singerNow)
                     .tabItem {
-                        Label("love", systemImage: "heart")
+                        Label("Singer", systemImage: "list.bullet")
                     }
             }
-            .navigationTitle("專輯")
+            .navigationTitle($title)
+            .toolbarRole(.editor)
         }
     }
 }

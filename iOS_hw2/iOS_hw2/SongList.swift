@@ -15,15 +15,21 @@ struct SongList: View {
         Song(singer: "張惠妹"),
         Song(singer: "MP魔幻力量")
     ]
+    @Binding var name : String
     
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
                 List {
                     ForEach(songs) { song in
-                        SongRow(song: song)
+                        NavigationLink (
+                            destination: SingerDetailView(singer: Singer(name: song.singer)),
+                            label: {
+                                SongRow(song: song)
+                            })
                     }
                 }
+                .listStyle(.plain)
                 Spacer()
             }
             .navigationTitle("歌手")
@@ -32,5 +38,5 @@ struct SongList: View {
 }
 
 #Preview {
-    SongList()
+    SongList(name: .constant("歌手名稱"))
 }

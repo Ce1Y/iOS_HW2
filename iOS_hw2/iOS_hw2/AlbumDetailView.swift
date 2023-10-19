@@ -14,6 +14,8 @@ struct AlbumDetailView: View {
     
     var body: some View {
         VStack(alignment: .center) {
+            Spacer()
+                .frame(height: 100)
             Image(album)
                 .resizable()
                 .scaledToFit()
@@ -22,10 +24,18 @@ struct AlbumDetailView: View {
                 .navigationBarTitleDisplayMode(.inline)
             Text(album)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Text(description)
-                .font(.system(size: 20))
-                .padding()
+            ScrollView {
+                Text(description)
+                    .font(.system(size: 20))
+                    .padding()
+            }
         }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        AlbumDetailView(singer: .constant("歌手"), album: .constant("范特西"), description: .constant("專輯簡介"))
     }
 }
 
