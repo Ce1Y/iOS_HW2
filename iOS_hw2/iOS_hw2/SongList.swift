@@ -21,12 +21,14 @@ struct SongList: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 List {
-                    ForEach(songs) { song in
-                        NavigationLink (
-                            destination: SingerDetailView(singer: Singer(name: song.singer)),
-                            label: {
-                                SongRow(song: song)
-                            })
+                    Section {
+                        ForEach(songs) { song in
+                            NavigationLink (
+                                destination: SingerDetailView(singer: Singer(name: song.singer)),
+                                label: {
+                                    SongRow(song: song)
+                                })
+                        }
                     }
                 }
                 .listStyle(.plain)

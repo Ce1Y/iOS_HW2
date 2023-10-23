@@ -24,7 +24,7 @@ struct ContentView: View {
                         HStack {
                             ForEach(singers, id: \.self) { singer in
                                 VStack {
-                                    Image(singer)
+                                    Image("\(singer)1")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width:75, height: 75)

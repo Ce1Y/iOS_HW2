@@ -15,12 +15,16 @@ struct SingerDetailView: View {
         VStack(alignment: .leading) {
 //            畫面上方的歌手頭像及歌手的社群網站鏈結
             HStack(alignment: .top) {
-                Image(singer.name)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    .navigationTitle(singer.name)
-                    .padding()
+                TabView {
+                    ForEach(1..<3) { item in
+                        Image("\(singer.name)\(item)")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                .tabViewStyle(.page)
+                .frame(height: 220)
+                .navigationTitle(singer.name)
                 List {
 //                    Youtube鏈結
                     Label(
@@ -76,6 +80,7 @@ struct SingerDetailView: View {
                         })
                 }
                 .listStyle(.inset)
+                .frame(height: 200)
             }
 //            畫面下方的歌手介紹
             VStack(alignment: .leading) {
