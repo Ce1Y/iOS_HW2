@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selection = 1
     @State var singerNow: String = ""
     @State var albumList: Array<String> = []
     @State var albumDescription: Array<String> = []
@@ -17,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
 //          分成兩頁，第一頁為推薦專輯，第二頁為所有歌手的介紹
-            TabView {
+            TabView(selection: $selection) {
                 VStack(alignment: .leading) {
 //                  此處的ScrollView為畫面上方一排的歌手頭像
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -66,15 +67,14 @@ struct ContentView: View {
                     }
                 }.tabItem {
                     Label("Home", systemImage: "house")
-                }
+                }.tag(1)
 //              此為歌手清單的頁面
                 SongList(name: $singerNow)
                     .tabItem {
                         Label("Singer", systemImage: "list.bullet")
-                    }
+                    }.tag(2)
             }
-            .navigationTitle($title)
-            .toolbarRole(.editor)
+            .navigationTitle(selection == 1 ? "首頁" : "歌手")
         }
     }
 }
